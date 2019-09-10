@@ -1,0 +1,23 @@
+<picture>
+  <source media="(min-width: 2561px)" [srcset]="getImagePaths(image).original" />
+  <source media="(min-width: 1200px)" [srcset]="getImagePaths(image).large" />
+  <source media="(min-width: 600px)" [srcset]="getImagePaths(image).medium" />
+  <source media="(max-width: 599px)" [srcset]="getImagePaths(image).small" />
+  <img class="hero__background" [src]="getImagePaths(image).large" [alt]="title">
+</picture>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <p class="hero__subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+      <h1 class="h1 hero__title" *ngIf="title">
+        <img *ngIf="logo" [src]="logo" [alt]="title">
+        {{ title }}
+      </h1>
+
+      <ng-content></ng-content>
+
+      <ng-content select="adn-hero-toolbar"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<button class="mat-dialog-close" mat-dialog-close>
+  <mat-icon svgIcon="close"></mat-icon>
+</button>
+
+<!-- Dialog: Header -->
+<div class="mat-dialog-header">
+  <h2 *ngIf="data.title">{{ data.title }}</h2>
+</div>
+
+<!-- Dialog: Content -->
+<div class="mat-dialog-body">
+  <p *ngIf="data.content">{{ data.content }}</p>
+</div>
+
+<!-- Dialog: Footer/Actions -->
+<div class="mat-dialog-footer" mat-dialog-actions>
+  <div class="btn-group">
+    <button cdkFocusInitial class="btn btn-primary" [mat-dialog-close]="true">
+      {{ data.confirmBtnText }}
+    </button>
+  </div>
+</div>

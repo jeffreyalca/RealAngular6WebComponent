@@ -1,0 +1,10 @@
+@import '~@essilor-usa/one-portal/common/styles/config/variables';
+@import '~@essilor-usa/one-portal/common/styles/mixins';
+
+:host {
+  p > span {
+    @include font(20px, 20px, 2px);
+    font-family: $font-bold;
+    color: $color-light-blue;
+  }
+}

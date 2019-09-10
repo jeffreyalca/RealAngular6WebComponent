@@ -1,0 +1,42 @@
+<button class="mat-dialog-close" [mat-dialog-close]="false">
+  <mat-icon svgIcon="close"></mat-icon>
+</button>
+
+<!-- Dialog: Header -->
+<div class="mat-dialog-header">
+  <h2 *ngIf="data.title">{{ data.title }}</h2>
+</div>
+
+<!-- Dialog: Content -->
+<div class="mat-dialog-body">
+  <p *ngIf="data.content">{{ data.content }}</p>
+</div>
+
+<!-- Dialog: Footer/Actions -->
+<div class="mat-dialog-footer" mat-dialog-actions>
+
+  <ng-container *ngIf="data.stackedButtons; then stacked; else default"></ng-container>
+
+  <ng-template #default>
+    <div class="btn-group btn-group--fill">
+      <button class="btn btn-outline" [title]="data.cancelBtnText" [mat-dialog-close]="false">
+        {{ data.cancelBtnText }}
+      </button>
+      <button cdkFocusInitial class="btn btn-primary" [title]="data.confirmBtnText" [mat-dialog-close]="true">
+        {{ data.confirmBtnText }}
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template #stacked>
+    <div class="btn-group-vertical">
+      <button cdkFocusInitial class="btn btn-primary" [title]="data.confirmBtnText"
+        [mat-dialog-close]="true">
+        {{ data.confirmBtnText }}
+      </button>
+      <button class="btn btn-link" [title]="data.cancelBtnText" [mat-dialog-close]="false">
+        {{ data.cancelBtnText }}
+      </button>
+    </div>
+  </ng-template>
+</div>

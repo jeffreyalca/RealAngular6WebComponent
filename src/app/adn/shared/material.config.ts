@@ -1,0 +1,48 @@
+import {
+  MatAutocompleteModule,
+  MatCardModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatIconModule,
+  MatListModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatSidenavModule,
+  MatTooltipModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MAT_LABEL_GLOBAL_OPTIONS,
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+} from '@angular/material';
+
+export const providers: any[] = [
+  { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } },
+  { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } },
+];
+
+export const modules: any[] = [
+  MatAutocompleteModule,
+  MatCardModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatSelectModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTooltipModule,
+  MatSidenavModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+];

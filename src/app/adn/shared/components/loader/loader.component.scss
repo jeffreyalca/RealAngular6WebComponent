@@ -1,0 +1,98 @@
+@import '~@essilor-usa/one-portal/common/styles/config/variables';
+@import '~@essilor-usa/one-portal/common/styles/mixins';
+
+// @keyframes loader-anim-1 {
+//   0% {
+//     transform: scale(0);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }
+
+// @keyframes loader-anim-2 {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   100% {
+//     transform: translate(19px, 0);
+//   }
+// }
+
+// @keyframes loader-anim-3 {
+//   0% {
+//     transform: scale(1);
+//   }
+//   100% {
+//     transform: scale(0);
+//   }
+// }
+
+:host(.loader) {
+  // display: block;
+  // width: 100%;
+  // height: 100%;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // z-index: 100;
+
+  &.fluid {
+    position: absolute;
+    max-height: auto;
+  }
+
+  .loader-backdrop {
+    width: calc(100% - 24px);
+    height: calc(100% - 5px);
+    position: absolute;
+    top: 0;
+    @include rem(left, 12px);
+    background-color: #fff;
+    z-index: 5;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  // .loader-icon {
+  //   display: inline-block;
+  //   position: relative;
+  //   width: 64px;
+  //   height: 64px;
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   z-index: 10;
+
+  //   div {
+  //     position: absolute;
+  //     top: 27px;
+  //     width: 11px;
+  //     height: 11px;
+  //     border-radius: 50%;
+  //     background: #007ebd;
+  //     animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  //   }
+
+  //   div:nth-child(1) {
+  //     left: 6px;
+  //     animation: loader-anim-1 0.6s infinite;
+  //   }
+
+  //   div:nth-child(2) {
+  //     left: 6px;
+  //     animation: loader-anim-2 0.6s infinite;
+  //   }
+
+  //   div:nth-child(3) {
+  //     left: 26px;
+  //     animation: loader-anim-2 0.6s infinite;
+  //   }
+
+  //   div:nth-child(4) {
+  //     left: 45px;
+  //     animation: loader-anim-3 0.6s infinite;
+  //   }
+  // }
+}

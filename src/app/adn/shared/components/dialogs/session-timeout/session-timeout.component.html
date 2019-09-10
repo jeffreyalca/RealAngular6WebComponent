@@ -1,0 +1,54 @@
+<button *ngIf="!sessionHasEnded" class="mat-dialog-close" mat-dialog-close>
+  <mat-icon svgIcon="close"></mat-icon>
+</button>
+
+<!-- Dialog: Header -->
+<div class="mat-dialog-header">
+  <h2 *ngIf="!sessionHasEnded">Your Session Expires Soon</h2>
+  <h2 *ngIf="sessionHasEnded">Your session has expired</h2>
+</div>
+
+<!-- Dialog: Content -->
+<div class="mat-dialog-body">
+  <ng-container *ngIf="sessionHasEnded; else countdown">
+    Your session timed out due to inactivity.
+  </ng-container>
+
+  <ng-template #countdown>
+    <p>You will be signed out in <span>{{ timer$ | async }}</span>.</p>
+    <p>Do you want to remain signed in?</p>
+  </ng-template>
+</div>
+
+<!-- Dialog: Footer/Actions -->
+<div class="mat-dialog-footer" mat-dialog-actions>
+  <div class="btn-group-vertical">
+    <ng-container *ngIf="sessionHasEnded; else default">
+      <button
+        cdkFocusInitial
+        class="btn btn-primary"
+        alt="Sign in"
+        (click)="logout()"
+      >
+        Sign in
+    </button>
+    </ng-container>
+    <ng-template #default>
+      <button
+        cdkFocusInitial
+        class="btn btn-primary"
+        title="Keep me signed In"
+        (click)="keepSessionAlive()"
+      >
+        Keep me signed In
+      </button>
+      <button
+        class="btn btn-link"
+        title="No, I'm finished"
+        [mat-dialog-close]="false"
+      >
+        No, I'm finished
+      </button>
+    </ng-template>
+  </div>
+</div>

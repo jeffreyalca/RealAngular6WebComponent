@@ -1,0 +1,111 @@
+@import '~@essilor-usa/one-portal/common/styles/config/variables';
+@import '~@essilor-usa/one-portal/common/styles/mixins';
+
+:host {
+  display: block;
+  width: 100%;
+  height: auto;
+  @include rem(padding-top, 40px);
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  background-color: $color-silver-chalice;
+
+  @include for-tablet-portrait-up {
+    @include rem(padding-top, 60px);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .col, .row {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include rem(min-height, 250px);
+    height: 126%;
+    z-index: -1;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+
+    @include for-tablet-portrait-up {
+      @include rem(height, 310px);
+    }
+  }
+
+  .hero__title {
+    display: block;
+    color: $color-white;
+    text-align: center;
+    margin: 0 auto;
+    @include rem(padding-bottom, 30px);
+
+    > img {
+      display: block;
+      @include rem(margin, 0 auto 20px auto);
+      @include rem(max-width, 180px);
+
+      @include for-tablet-portrait-up {
+        display: none;
+        vertical-align: middle;
+        @include rem(max-width, 160px);
+        @include rem(margin, 0 10px 0 0);
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      // @include rem(max-width, 460px);
+      @include rem(padding-bottom, 50px);
+    }
+
+    @include for-tablet-landscape-up {
+      @include rem(max-width, 600px);
+      @include rem(padding-bottom, 50px);
+    }
+  }
+
+  .hero__subtitle {
+    display: none;
+    @include font(18px, 1em, 3.6px);
+    font-family: $font-bold;
+    color: $color-white;
+    text-align: center;
+    margin: 0 auto;
+    @include rem(padding-bottom, 20px);
+
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+  &.hero--fullsize {
+    height: auto;
+    @include rem(min-height, 620px);
+
+    > .container {
+      @include rem(padding-top, 100px);
+      @include rem(padding-bottom, 100px);
+    }
+
+    .hero__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+}

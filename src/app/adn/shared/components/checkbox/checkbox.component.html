@@ -1,0 +1,16 @@
+CheckboxComponent<div class="checkbox">
+  <input
+    #inputRef
+    [(ngModel)]="value"
+    (change)="onChange($event, value)"
+    type="checkbox"
+    [id]="id"
+    [value]="value">
+  <label [for]="id">
+    <span>
+      <fa-icon *ngIf="!inputRef.checked" [icon]="['far', 'square']"></fa-icon>
+      <fa-icon *ngIf="inputRef.checked" [icon]="['fas', 'check-square']"></fa-icon>
+    </span>
+    <ng-content select="p"></ng-content>
+  </label>
+</div>

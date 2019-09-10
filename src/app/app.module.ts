@@ -4,6 +4,7 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
+import {AdnModule} from "./adn/adn.module";
 
 @NgModule({
    entryComponents: [
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
       AppComponent
    ],
    imports: [
-      BrowserModule
+      BrowserModule,
+      AdnModule,
    ],
    providers: []
 })

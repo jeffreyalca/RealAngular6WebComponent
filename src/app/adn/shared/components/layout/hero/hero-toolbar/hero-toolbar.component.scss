@@ -1,0 +1,16 @@
+@import '~@essilor-usa/one-portal/common/styles/config/variables';
+@import '~@essilor-usa/one-portal/common/styles/mixins';
+
+
+:host(.hero__toolbar) {
+    display: block;
+    text-align: center;
+    width: 80%;
+    @include rem(margin, -10px auto 0 auto);
+    @include rem(padding-bottom, 20px);
+
+    @include for-tablet-portrait-up {
+      width: 100%;
+      @include rem(margin, -30px auto 0 auto);
+    }
+  }

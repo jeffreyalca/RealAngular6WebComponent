@@ -1,0 +1,172 @@
+<!--<adn-hero title="Job Status Information" image="assets/images/headers/experts.jpg"></adn-hero>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="row is-flex">
+        <div class="col s12">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="container row">
+                <div class="col s12">
+                  <form [formGroup]="jobStatusInfoForm">
+                    <div class="row">
+                      <div class="col s12 m4 l4">
+                        <mat-form-field>
+                          <mat-select formControlName="accountNumber" placeholder="Account Number" required>
+                            <mat-option>
+                              ---Select---
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="col s12 m4 l4">
+                        <mat-form-field>
+                          <mat-select formControlName="accountName" placeholder="Account Name" required>
+                            <mat-option>
+                              ---Select---
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="col s12 m4 l4">
+                        <mat-form-field>
+                          <mat-select formControlName="jobStatus" placeholder="Job Status">
+                            <mat-option>
+                              ---Select---
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s6 m3 l3">
+                                                  <mat-form-field>
+                                                    <input matInput [matDatepicker]="orderRecievedPickerStart" placeholder="Order Received From"
+                                                           (click)="orderRecievedPickerStart.open()">
+<!--                                                    <mat-datepicker-toggle matSuffix [for]="orderRecievedPickerStart"></mat-datepicker-toggle>-->
+                                                    <mat-datepicker #orderRecievedPickerStart></mat-datepicker>
+                                                  </mat-form-field>
+                      </div>
+                      <div class="col s6 m3 l3">
+                                                <mat-form-field>
+                                                  <input matInput [matDatepicker]="orderRecievedPickerEnd" placeholder="Order Received To"
+                                                         (click)="orderRecievedPickerEnd.open()">
+<!--                                                  <mat-datepicker-toggle matSuffix [for]="orderRecievedPickerEnd"></mat-datepicker-toggle>-->
+                                                  <mat-datepicker #orderRecievedPickerEnd></mat-datepicker>
+                                                </mat-form-field>
+                      </div>
+                      <div class="col s6 m3 l3">
+                                                <mat-form-field>
+                                                  <input matInput [matDatepicker]="estDeliveryPicker" placeholder="Est. Delivery From"
+                                                         (click)="estDeliveryPicker.open()">
+<!--                                                  <mat-datepicker-toggle matSuffix [for]="estDeliveryPicker"></mat-datepicker-toggle>-->
+                                                  <mat-datepicker #estDeliveryPicker></mat-datepicker>
+                                                </mat-form-field>
+                      </div>
+                      <div class="col s6 m3 l3">
+                                                <mat-form-field>
+                                                  <input matInput [matDatepicker]="estDeliveryPickerEnd" placeholder="Est. Delivery To"
+                                                         (click)="estDeliveryPickerEnd.open()">
+<!--                                                  <mat-datepicker-toggle matSuffix [for]="estDeliveryPickerEnd"></mat-datepicker-toggle>-->
+                                                  <mat-datepicker #estDeliveryPickerEnd></mat-datepicker>
+                                                </mat-form-field>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+
+                      <div class="col s8">
+                        <strong>Lab Account ID:</strong>XXXX
+                      </div>
+                      <div class="col s4">
+                        <strong>Last Update Received:</strong>MM-DD-YYYY HH:MM:SS
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <strong>Lab:</strong>XXXX
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <strong>Lab Phone #</strong>XXXX-XXXX-XXX
+                      </div>
+                    </div>
+                    <hr>
+                  </form>
+                </div>
+              </div>
+              <div class="container row">
+                <div class="col s12 m10 l10 push-s7 push-m9 push-l10">
+                  <button class="btn-secondary" mat-icon-button>
+                    <mat-icon>refresh</mat-icon>
+                  </button>
+                  <button class="btn-secondary" mat-icon-button>
+                    <mat-icon>save</mat-icon>
+                  </button>
+                  <button class="btn-secondary" mat-icon-button>
+                    <mat-icon>print</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="container row">
+                <div class="col s12">
+                  <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          ECP Action Needed
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>ECP Action Needed Content</p>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Delayed Jobs
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>Delayed Jobs Content</p>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Work In Progress
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>Work In Progress Content</p>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Shipped Jobs
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>Shipped Jobs Content</p>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Cancelled Jobs
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>Cancelled Jobs Content</p>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
